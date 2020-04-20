@@ -284,5 +284,5 @@ class ExchangeSilverCoinTask(Sched, DontWait, Unique):
     async def work(user):
         if not user.task_ctrl['silver2coin']:
             return
-        json_rsp = await user.req_s(ExchangeSilverCoinReq.silver2coin_web, user)
+        json_rsp = await user.req_s(ExchangeSilverCoinReq.silver2coin_app, user)
         user.info(f'银瓜子兑换为硬币：{json_rsp["msg"]}')

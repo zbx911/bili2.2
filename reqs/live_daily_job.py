@@ -148,3 +148,14 @@ class ExchangeSilverCoinReq:
         }
         json_rsp = await user.bililive_session.request_json('POST', url, headers=user.dict_bili['pcheaders'], data=data)
         return json_rsp
+
+    @staticmethod
+    async def silver2coin_app(user):
+        extra_params = {
+            'access_key': user.dict_bili["access_key"],
+            'ts': utils.curr_time()
+        }
+        params = user.sort_and_sign(extra_params)
+        app_url = "https://api.live.bilibili.com/AppExchange/silver2coin"
+        json_rsp1 = await user.bililive_session.request_json('GET', app_url, headers=user.dict_bili['appheaders'], params=params)
+        return json_rsp1

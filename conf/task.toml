@@ -42,7 +42,7 @@ clean_expiring_gift2all_medal = false
 clean-expiring-gift2room = 0
 
 # 一天最多一个硬币兑换机会
-silver2coin = false
+silver2coin = true
 
 # 投满正在佩戴的勋章当日亲密度
 send2wearing-medal = false
